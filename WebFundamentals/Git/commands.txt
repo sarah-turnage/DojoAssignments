@@ -1,0 +1,106 @@
+Sarah@Sarah MINGW64 /
+$ cd ~
+
+Sarah@Sarah MINGW64 ~
+$ cd Desktop
+
+Sarah@Sarah MINGW64 ~/Desktop (master)
+$ mkdir test
+
+Sarah@Sarah MINGW64 ~/Desktop (master)
+$ cd test
+
+Sarah@Sarah MINGW64 ~/Desktop/test (master)
+$ touch index.html styles.css aboutMe.txt
+
+Sarah@Sarah MINGW64 ~/Desktop/test (master)
+$ git init
+Initialized empty Git repository in C:/Users/Sarah/Desktop/test/.git/
+
+Sarah@Sarah MINGW64 ~/Desktop/test (master)
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        aboutMe.txt
+        index.html
+        styles.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Sarah@Sarah MINGW64 ~/Desktop/test (master)
+$ git add .
+
+Sarah@Sarah MINGW64 ~/Desktop/test (master)
+$ git commit -m "adding my initial empty files"
+[master (root-commit) bf93f41] adding my initial empty files
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 aboutMe.txt
+ create mode 100644 index.html
+ create mode 100644 styles.css
+
+Sarah@Sarah MINGW64 ~/Desktop/test (master)
+$ vi aboutMe.txt
+
+Sarah@Sarah MINGW64 ~/Desktop/test (master)
+$ git add .
+warning: LF will be replaced by CRLF in aboutMe.txt.
+The file will have its original line endings in your working directory.
+
+Sarah@Sarah MINGW64 ~/Desktop/test (master)
+$ git commit -m "updated aboutMe"
+[master 96a1888] updated aboutMe
+ 1 file changed, 2 insertions(+)
+
+Sarah@Sarah MINGW64 ~/Desktop/test (master)
+$ vi aboutMe.txt
+
+Sarah@Sarah MINGW64 ~/Desktop/test (master)
+$ git add .
+warning: LF will be replaced by CRLF in aboutMe.txt.
+The file will have its original line endings in your working directory.
+
+Sarah@Sarah MINGW64 ~/Desktop/test (master)
+$ git commit -m "added favorite movie to aboutMe"
+[master 0a23ba7] added favorite movie to aboutMe
+ 1 file changed, 1 insertion(+)
+
+Sarah@Sarah MINGW64 ~/Desktop/test (master)
+$ git log
+commit 0a23ba715b415fd6bd9370ab09cdd7ff0b69505c
+Author: Sarah Turnage <sarah.turnage@yahoo.com>
+Date:   Tue Feb 7 16:19:52 2017 -0500
+
+    added favorite movie to aboutMe
+
+commit 96a18887d804bf86e0ec3e1003325b65c1daa94f
+Author: Sarah Turnage <sarah.turnage@yahoo.com>
+Date:   Tue Feb 7 16:18:40 2017 -0500
+
+    updated aboutMe
+
+commit bf93f41a83eb3b62c045d5ac2eba1bfb716f2316
+Author: Sarah Turnage <sarah.turnage@yahoo.com>
+Date:   Tue Feb 7 16:16:32 2017 -0500
+
+    adding my initial empty files
+
+Sarah@Sarah MINGW64 ~/Desktop/test (master)
+$ git revert -n 96a18887d804bf86e0ec3e1003325b65c1daa94f
+error: could not revert 96a1888... updated aboutMe
+hint: after resolving the conflicts, mark the corrected paths
+hint: with 'git add <paths>' or 'git rm <paths>'
+
+Sarah@Sarah MINGW64 ~/Desktop/test (master|REVERTING)
+$ git revert 96a18887d804bf86e0ec3e1003325b65c1daa94f
+error: Reverting is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: revert failed
+
+Sarah@Sarah MINGW64 ~/Desktop/test (master|REVERTING)
+$
